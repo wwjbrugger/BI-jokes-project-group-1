@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Header -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+<script>
+$(function(){
+	$('.rateButton').click(function(){
+    var value = ($(this).val());
+    var split = value.split('-')
+		$.ajax({
+			url: '/_rate',
+      data: { id: parseInt(split[0]), rating: parseInt(split[1])},
+      dataType: "text",
+			success: function(response){
+        $('#ratingDiv' + split[0]).remove();
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	});
+});
+</script>
+  <header>
+    <div class="container" id="maincontent" tabindex="-1">
+      <div class="row">
+        <div class="intro-text">
+          <h1 class="name">Some random jokes for you:</h1>
+          <p>After voting on some jokes you will get jokes that you will like more.</p>
+          {% if not userLogged %}
+            <p>You need to be authenticated to rate</p>
+          {% endif %}
+          <br>
+          <a class="refreshButton" href="/random">Refresh the page</a>
+
+          <hr class="star-light">
+        </div>
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          {% for id, joke in jokesList %}
+          <div id="joke{{ id }}" class="jokeItem">
+            <p>
+              {% autoescape false %}
+              {{joke}}
+              {% endautoescape %}
+            </p>
+            {% if userLogged %}
+            <div id="ratingDiv{{id}}" class="ratingDiv">
+              <p>Rate this joke:</p>
+              I hated it
+              <button class="rateButton" value="{{id}}-1">1</button>
+              <button class="rateButton" value="{{id}}-2">2</button>
+              <button class="rateButton" value="{{id}}-3">3</button>
+              <button class="rateButton" value="{{id}}-4">4</button>
+              <button class="rateButton" value="{{id}}-5">5</button>
+              I liked it
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock %}

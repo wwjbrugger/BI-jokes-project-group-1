@@ -1,0 +1,118 @@
+.big-button {
+  color: #18BC9C;
+  border: 2px solid #18BC9C;
+  background-color: #fff;
+}
+header .intro-text .name {
+  font-size: 2.75em;
+}
+
+img.user_profile {
+  width: 200px;
+}
+
+#button_user_pic {
+  width: 51px;
+  margin: -10px 10px -10px -17px;
+}
+
+.facebook_button {
+  color: #3b5998;
+  border: 2px solid #3b5998;
+}
+
+header img#button_user_pic {
+  display: inline;
+}
+
+footer hr.star-light:after {
+  background-color: #233140;
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .card #user-name {
+    margin-top: 34%;
+  }
+  h1 {
+    margin-top: 6%;
+  }
+}
+
+.blur {
+   color: transparent;
+   text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+.navbar-custom {
+  padding: 10px;
+}
+
+header .container {
+  padding-top: 150px;
+}
+
+.jokeItem {
+  background: rgba(255, 255, 255, 0.90);
+  color: black;
+  border: 1px solid rgba(255, 255, 255);
+  border-radius: 20px;
+  margin: 20px 0px;
+}
+
+.jokeItem p {
+  padding: 20px 10px;
+}
+
+.ratingDiv {
+  margin-bottom: 20px;
+}
+
+.ratingDiv button {
+  background: #18BC9C;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+}
+
+.ratingDiv p {
+  margin-bottom: 0px;
+  font-style: italic;
+}
+
+.ratingDiv button:hover, .ratingDiv button:focus,.ratingDiv button:active {
+  background: rgb(255, 255, 255);
+  border: 1px solid #18BC9C;
+  color: #18BC9C;
+  transition: ease-out 0.5s;
+}
+
+.refreshButton {
+  background: #18BC9C;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 20px;
+}
+.refreshButton:hover {
+  background: rgb(255, 255, 255);
+  border: 1px solid white;
+  color: #18BC9C;
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 20px;
+  transition: ease-out 0.5s;
+}
+
+.error {
+  background: red;
+  padding: 5px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
