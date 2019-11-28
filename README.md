@@ -6,9 +6,12 @@ Find the best jokes for you thanks to a recommendation system algorithm.
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install flask.
 (You may need to use sudo)
-
+The Server script works with python 2 
+The recommander script works with python 3
 ```
-pip install flask
+pip2 install flask
+pip2 install Flask-SQLAlchemy
+pip2 install pandas 
 pip install pandas
 pip install --upgrade tqdm
 pip install numpy
@@ -17,7 +20,7 @@ pip install numpy
 ## Usage
 
 ```
-python 2 run.py
+python2 run.py
 python prediction_web.py data/web_input.csv data/centers_84.csv results/web.csv 3 1 True
 ```
 
